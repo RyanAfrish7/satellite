@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Afrish Khan S -->
+<component type="desktop">
+  <id>com.github.ryanafrish7.satellite</id>
+  <metadata_license>CC0</metadata_license>
+  <name>Satellite</name>
+  <summary>Lets you monitor your system's resources</summary>
+  <description>
+    <p>Satellite is a system monitor which will allow you to monitor your system resources like 
+    memory, cpu, network and disk.</p>
+  </description>
+</component>
