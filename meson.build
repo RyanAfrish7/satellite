@@ -4,9 +4,21 @@ executable(
     meson.project_name(),
     'src/Application.vala',
     'src/MainWindow.vala',
+    'src/Orchestrator.vala',
+    'src/models/ProcessInfo.vala',
+    'src/views/CPUView.vala',
+    'src/providers/ProcessInfoProvider.vala',
+    'src/stores/AbstractModel.vala',
+    'src/stores/CPUViewModel.vala',
     dependencies: [
+        dependency('gee-0.8'),
+        dependency('granite', version: '>=5.2.3'),
         dependency('gtk+-3.0'),
-        dependency ('granite', version: '>=5.2.3')
+        dependency('libgtop-2.0', version: '>=2.38.0'),
+        meson.get_compiler('vala').find_library('posix'),
+    ],
+    vala_args: [
+        '--vapidir=' + meson.source_root() + '/vapi/',
     ],
     install: true
 )
