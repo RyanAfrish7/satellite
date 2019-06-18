@@ -1,20 +1,22 @@
 public class Satellite.Orchestrator {
     ProcessInfoProvider process_info_provider;
+    ProcessUsageProvider process_usage_provider;
 
     CPUView cpu_view;
     CPUViewModel cpu_model;
 
-    const int UPDATE_INTERVAL = 500;
+    const int UPDATE_INTERVAL = 1800;
 
     public Orchestrator (
         Satellite.CPUView cpu_view
     ) {
         this.cpu_view = cpu_view;
         this.process_info_provider = new ProcessInfoProvider ();
+        this.process_usage_provider = new ProcessUsageProvider ();
     }
 
     private void init_cpu () {
-        cpu_model = new CPUViewModel(process_info_provider);
+        cpu_model = new CPUViewModel(process_info_provider, process_usage_provider);
         cpu_view.set_model (cpu_model);
     }
 

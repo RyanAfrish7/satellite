@@ -22,8 +22,10 @@ public class Satellite.CPUView : Gtk.TreeView {
         column_cpu_usage.title = get_column_name (CPUViewModel.Column.CPU_USAGE);
         column_cpu_usage.expand = false;
         column_cpu_usage.min_width = 120;
+        column_cpu_usage.sort_column_id = CPUViewModel.Column.CPU_USAGE;
         column_cpu_usage.pack_start (text_renderer, false);
-        column_cpu_usage.add_attribute (text_renderer, "text", CPUViewModel.Column.CPU_USAGE);
+        column_cpu_usage.set_cell_data_func (text_renderer, (layout, renderer, model, iter) => 
+            cell_percentage_data(layout, renderer, model, iter, CPUViewModel.Column.CPU_USAGE));
 
         insert_column (column_cpu_usage, -1);
         
@@ -56,5 +58,12 @@ public class Satellite.CPUView : Gtk.TreeView {
             case UID: return "UID";
             default: assert_not_reached();
         }
+    }
+
+    public void cell_percentage_data (Gtk.CellLayout layout, Gtk.CellRenderer renderer, Gtk.TreeModel model, Gtk.TreeIter iter, CPUViewModel.Column column) {
+        Value data;
+        model.get_value (iter, column, out data);
+
+        renderer.set_property ("text", "%.1f".printf (data.get_double ()));
     }
 }
