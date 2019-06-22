@@ -1,8 +1,8 @@
-public class Satellite.ProcessUsageProvider {
+public class Satellite.ProcessCPUUsageProvider {
     GTop.Cpu? last_cpu;
     Gee.Map<int, GTop.ProcTime?> pid_cpu_usage_map;
 
-    public ProcessUsageProvider () {
+    public ProcessCPUUsageProvider () {
         pid_cpu_usage_map = new Gee.HashMap<int, GTop.ProcTime?> ();
     }
 

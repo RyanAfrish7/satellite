@@ -9,7 +9,7 @@ executable(
     'src/models/ProcessCPUUsage.vala',
     'src/views/CPUView.vala',
     'src/providers/ProcessInfoProvider.vala',
-    'src/providers/ProcessUsageProvider.vala',
+    'src/providers/ProcessCPUUsageProvider.vala',
     'src/stores/AbstractModel.vala',
     'src/stores/CPUViewModel.vala',
     dependencies: [

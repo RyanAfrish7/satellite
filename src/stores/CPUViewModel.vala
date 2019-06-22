@@ -1,6 +1,6 @@
 public class Satellite.CPUViewModel : Satellite.AbstractModel<int> {
     ProcessInfoProvider process_info_provider;
-    ProcessUsageProvider process_usage_provider;
+    ProcessCPUUsageProvider process_cpu_usage_provider;
 
     public enum Column {
         PID,
@@ -10,7 +10,7 @@ public class Satellite.CPUViewModel : Satellite.AbstractModel<int> {
         CPU_USAGE
     }
 
-    public CPUViewModel (ProcessInfoProvider process_info_provider, ProcessUsageProvider process_usage_provider) {
+    public CPUViewModel (ProcessInfoProvider process_info_provider, ProcessCPUUsageProvider process_cpu_usage_provider) {
         set_column_types (new Type[] {
             typeof (int),       // pid
             typeof (string),    // command_line
@@ -20,7 +20,7 @@ public class Satellite.CPUViewModel : Satellite.AbstractModel<int> {
         });
 
         this.process_info_provider = process_info_provider;
-        this.process_usage_provider = process_usage_provider;
+        this.process_cpu_usage_provider = process_cpu_usage_provider;
     }
 
     public void refresh () {
@@ -32,7 +32,7 @@ public class Satellite.CPUViewModel : Satellite.AbstractModel<int> {
             pids.add(process_info.pid);
         }
 
-        Gee.Map<int, ProcessCPUUsage> pid_cpu_usage_map = process_usage_provider.fetch_cpu_usages (pids);
+        Gee.Map<int, ProcessCPUUsage> pid_cpu_usage_map = process_cpu_usage_provider.fetch_cpu_usages (pids);
 
         foreach (ProcessInfo process_info in process_info_list) {
             Gtk.TreeIter iter = get_or_append_row (process_info.pid);
