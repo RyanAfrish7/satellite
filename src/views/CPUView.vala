@@ -4,8 +4,6 @@ public class Satellite.CPUView : Gtk.TreeView {
     Gtk.TreeViewColumn column_cpu_usage;
     Gtk.TreeViewColumn column_user;
 
-    Gtk.TreeStore store;
-
     public CPUView () {
         var text_renderer = new Gtk.CellRendererText();
         text_renderer.ellipsize = Pango.EllipsizeMode.END;
@@ -25,7 +23,7 @@ public class Satellite.CPUView : Gtk.TreeView {
         column_cpu_usage.sort_column_id = CPUViewModel.Column.CPU_USAGE;
         column_cpu_usage.pack_start (text_renderer, false);
         column_cpu_usage.set_cell_data_func (text_renderer, (layout, renderer, model, iter) => 
-            cell_percentage_data(layout, renderer, model, iter, CPUViewModel.Column.CPU_USAGE));
+        cell_percentage_data(layout, renderer, model, iter, CPUViewModel.Column.CPU_USAGE));
 
         insert_column (column_cpu_usage, -1);
         
@@ -45,8 +43,6 @@ public class Satellite.CPUView : Gtk.TreeView {
         column_user.add_attribute (text_renderer, "text", CPUViewModel.Column.USER);
 
         insert_column (column_user, -1);
-
-        set_model (store);
     }
 
     public string get_column_name (CPUViewModel.Column column) {

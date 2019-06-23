@@ -5,6 +5,7 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
     private Gtk.Stack stack;
 
     private CPUView cpu_view;
+    private MemoryView memory_view;
     private Orchestrator orchestrator;
 
     enum View {
@@ -67,14 +68,16 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
         cpu_view = new Satellite.CPUView ();
         stack.add_named (wrap_with_scrolled_window (cpu_view), View.CPU.name ());
 
-        stack.add_named (not_available_widget(), View.MEMORY.name ());
+        memory_view = new Satellite.MemoryView ();
+        stack.add_named (wrap_with_scrolled_window (memory_view), View.MEMORY.name ());
+
         stack.add_named (not_available_widget(), View.NETWORK.name ());
         stack.add_named (not_available_widget(), View.ENERGY.name ());
         stack.add_named (not_available_widget(), View.DISK.name ());
 
         add (stack);
 
-        orchestrator = new Orchestrator (cpu_view);
+        orchestrator = new Orchestrator (cpu_view, memory_view);
         orchestrator.init ();
         orchestrator.start ();
     }
