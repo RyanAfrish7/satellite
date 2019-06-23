@@ -53,12 +53,9 @@ public class Satellite.ProcessCPUUsageProvider {
 
         Gee.Map<int, ProcessCPUUsage> pid_cpu_usage_map = new Gee.HashMap<int, ProcessCPUUsage> ();
         
-        double cum = 0.0;
-
         foreach (int pid in pids) {
             ProcessCPUUsage cu = fetch_cpu_usage (pid, real_time_interval);
             pid_cpu_usage_map.set (pid, cu);
-            cum += cu.cpu_usage;
         }
 
         return pid_cpu_usage_map.read_only_view;
