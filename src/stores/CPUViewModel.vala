@@ -16,7 +16,7 @@ public class Satellite.CPUViewModel : Satellite.AbstractModel<int> {
             typeof (string),    // command_line
             typeof (int),       // uid
             typeof (string),    // username
-            typeof (double)      // cpu_usage
+            typeof (double)     // cpu_usage
         });
 
         this.process_info_provider = process_info_provider;

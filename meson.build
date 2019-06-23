@@ -5,6 +5,7 @@ executable(
     'src/Application.vala',
     'src/MainWindow.vala',
     'src/Orchestrator.vala',
+    'src/shared/TreeViewUtils.vala',
     'src/models/ProcessInfo.vala',
     'src/models/ProcessCPUUsage.vala',
     'src/models/ProcessMemoryUsage.vala',
