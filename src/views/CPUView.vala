@@ -56,6 +56,9 @@ public class Satellite.CPUView : Gtk.TreeView {
 
             insert_column (column_user, -1);
         }
+
+        set_search_column (CPUViewModel.Column.COMMAND_LINE);
+        set_search_equal_func (contains_func);
     }
 
     public string get_column_name (CPUViewModel.Column column) {

@@ -41,4 +41,11 @@ namespace Satellite {
 
         return renderer;
     }
+
+    public bool contains_func (Gtk.TreeModel model, int column, string key, Gtk.TreeIter iter) {
+        Value data;
+
+        model.get_value (iter, column, out data);
+        return !data.get_string ().contains (key);
+    }
 }

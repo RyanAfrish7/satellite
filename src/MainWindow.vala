@@ -10,24 +10,20 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
 
     enum View {
         CPU,
-        MEMORY,
-        NETWORK,
-        ENERGY,
-        DISK;
+        MEMORY;
 
         public string name() {
             switch (this) {
                 case CPU: return "CPU";
                 case MEMORY: return "Memory";
-                case NETWORK: return "Network";
-                case ENERGY: return "Energy";
-                case DISK: return "Disk";
                 default: assert_not_reached();
             }
         }
 
-        public static const View[] _all = { CPU, MEMORY, NETWORK, ENERGY, DISK };
+        public static const View[] _all = { CPU, MEMORY };
     }
+
+    private View last_selected_view;
 
     public MainWindow (Gtk.Application app) {
         Object (application: app);
@@ -39,18 +35,12 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
 
         header_bar = new Gtk.HeaderBar ();
         header_bar.show_close_button = true;
-
+        
         view_mode = new Granite.Widgets.ModeButton ();
 
         foreach (View view in View._all ) {
             view_mode.append_text (view.name());
         }
-
-        view_mode.set_active (0);
-
-        view_mode.mode_changed.connect((widget) => {
-            stack.visible_child_name = View._all[view_mode.selected].name();
-        });
 
         header_bar.set_custom_title (view_mode);
 
@@ -60,10 +50,10 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
 
         header_bar.pack_end (search_entry);
 
-        set_titlebar (header_bar);
-
         stack = new Gtk.Stack ();
         stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+
+        set_titlebar (header_bar);
 
         cpu_view = new Satellite.CPUView ();
         stack.add_named (wrap_with_scrolled_window (cpu_view), View.CPU.name ());
@@ -71,11 +61,18 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
         memory_view = new Satellite.MemoryView ();
         stack.add_named (wrap_with_scrolled_window (memory_view), View.MEMORY.name ());
 
-        stack.add_named (not_available_widget(), View.NETWORK.name ());
-        stack.add_named (not_available_widget(), View.ENERGY.name ());
-        stack.add_named (not_available_widget(), View.DISK.name ());
-
         add (stack);
+
+        view_mode.mode_changed.connect((widget) => {
+            View selected_view = View._all[view_mode.selected];
+
+            stack.visible_child_name = selected_view.name();
+            get_treeview (last_selected_view).set_search_entry (null);
+            get_treeview (selected_view).set_search_entry (search_entry);
+        });
+
+        view_mode.set_active (0);
+        last_selected_view = View._all[0];
 
         orchestrator = new Orchestrator (cpu_view, memory_view);
         orchestrator.init ();
@@ -90,5 +87,13 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.add (child);
         return scrolled_window;
+    }
+
+    Gtk.TreeView get_treeview (View view) {
+        switch (view) {
+            case CPU: return cpu_view;
+            case MEMORY: return memory_view;
+            default: assert_not_reached();
+        }
     }
 }

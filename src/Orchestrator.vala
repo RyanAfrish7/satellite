@@ -38,6 +38,8 @@ public class Satellite.Orchestrator {
     }
 
     public void start () {
+        cpu_model.refresh ();
+        memory_view_model.refresh ();
         Timeout.add (UPDATE_INTERVAL, () => {
             cpu_model.refresh ();
             memory_view_model.refresh ();

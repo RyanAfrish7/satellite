@@ -72,6 +72,9 @@ public class Satellite.MemoryView : Gtk.TreeView {
 
             insert_column (column_user, -1);
         }
+
+        set_search_column (MemoryViewModel.Column.COMMAND_LINE);
+        set_search_equal_func (contains_func);
     }
 
     public string get_column_name (MemoryViewModel.Column column) {
