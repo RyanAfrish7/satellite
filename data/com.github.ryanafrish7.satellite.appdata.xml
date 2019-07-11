@@ -7,6 +7,25 @@
   <summary>Monitor how the system resources are being utilized</summary>
   <description>
     <p>Satellite is a system monitor which will allow you to monitor your system resources like 
-    memory, cpu, network and disk.</p>
+    cpu usage and memory.</p>
   </description>
+  <provides>
+    <binary>com.github.ryanafrish7.satellite</binary>
+  </provides>
+  <releases>
+  ​  <release version="0.1.0" type="development" date="2019-07-12">
+      <description>
+        <p>Initial release</p>
+      </description>
+    </release>
+  ​</releases>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/RyanAfrish7/satellite/master/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <developer_name>Afrish Khan S</developer_name>
+  <url type="homepage">https://github.com/RyanAfrish7/satellite</url>
+  <url type="bugtracker">https://github.com/RyanAfrish7/satellite/issues</url>
 </component>
