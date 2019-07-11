@@ -4,7 +4,7 @@
   <id>com.github.ryanafrish7.satellite</id>
   <metadata_license>CC0</metadata_license>
   <name>Satellite</name>
-  <summary>Lets you monitor your system's resources</summary>
+  <summary>Monitor how the system resources are being utilized</summary>
   <description>
     <p>Satellite is a system monitor which will allow you to monitor your system resources like 
     memory, cpu, network and disk.</p>

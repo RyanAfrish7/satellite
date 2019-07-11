@@ -1,10 +1,10 @@
 [Desktop Entry]
 Name=Satellite
 GenericName=System monitor
-Comment=Lets you monitor how the system resources are being utilized
+Comment=Monitor how the system resources are being utilized
 Categories=System;Utility;
 Exec=com.github.ryanafrish7.satellite
-Icon=application-default-icon
+Icon=com.github.ryanafrish7.satellite
 Terminal=false
 Type=Application
 Keywords=System;Process;Monitor;
