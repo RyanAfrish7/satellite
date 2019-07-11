@@ -1,4 +1,4 @@
-<img align="left" width="64" height="64" src="data/icons/com.github.ryanafrish7.satellite.svg">
+<img align="left" width="64" height="64" src="data/icons/source.svg">
 <h1 class="rich-diff-level-zero">Satellite</h1>
 An elementary OS app which lets you monitor how the system resources are being utilized
 
