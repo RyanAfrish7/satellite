@@ -1,0 +1,28 @@
+---
+
+language: node_js
+
+node_js:
+  - lts/*
+
+sudo: required
+
+services:
+  - docker
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++-5-dev
+
+install:
+<<<<<<< HEAD
+  - npm i -g @elementaryos/houston
+=======
+  - npm i -g @elementaryos/houston@1
+>>>>>>> 9c3f662... Update version
+
+script:
+  - houston ci
