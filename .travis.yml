@@ -19,7 +19,7 @@ addons:
       - libstdc++-5-dev
 
 install:
-  - npm i -g @elementaryos/houston@latest
+  - npm i -g @elementaryos/houston@1
 
 script:
   - houston ci
