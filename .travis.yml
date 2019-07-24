@@ -15,11 +15,10 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - tree
       - libstdc++-5-dev
 
 install:
-  - npm i -g @elementaryos/houston@latest
+  - npm i -g @elementaryos/houston
 
 script:
   - houston ci
