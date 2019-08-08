@@ -18,11 +18,7 @@ addons:
       - libstdc++-5-dev
 
 install:
-<<<<<<< HEAD
   - npm i -g @elementaryos/houston
-=======
-  - npm i -g @elementaryos/houston@1
->>>>>>> 9c3f662... Update version
 
 script:
   - houston ci
