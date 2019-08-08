@@ -1,0 +1,4 @@
+src/Shared/TreeViewUtils.vala
+src/Views/CPUView.vala
+src/Views/MemoryView.vala
+src/MainWindow.vala
