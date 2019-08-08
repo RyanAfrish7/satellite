@@ -14,13 +14,13 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
 
         public string name() {
             switch (this) {
-                case CPU: return "CPU";
-                case MEMORY: return "Memory";
+                case CPU: return _("CPU");
+                case MEMORY: return _("Memory");
                 default: assert_not_reached();
             }
         }
 
-        public static const View[] _all = { CPU, MEMORY };
+        public const View[] _all = { CPU, MEMORY };
     }
 
     private View last_selected_view;
@@ -46,7 +46,7 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
 
         search_entry = new Gtk.SearchEntry ();
         search_entry.valign = Gtk.Align.CENTER;
-        search_entry.placeholder_text = "Search..";
+        search_entry.placeholder_text = _("Search…");
 
         header_bar.pack_end (search_entry);
 
@@ -79,9 +79,11 @@ public class Satellite.MainWindow : Gtk.ApplicationWindow {
         orchestrator.start ();
     }
 
+    /*
     Gtk.Widget not_available_widget () {
-        return new Gtk.Label ("Not available");
+        return new Gtk.Label (_("Not available"));
     }
+    */
 
     Gtk.ScrolledWindow wrap_with_scrolled_window (Gtk.Widget child) {
         var scrolled_window = new Gtk.ScrolledWindow (null, null);

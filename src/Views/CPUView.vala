@@ -63,11 +63,11 @@ public class Satellite.CPUView : Gtk.TreeView {
 
     public string get_column_name (CPUViewModel.Column column) {
         switch (column) {
-            case COMMAND_LINE: return "Command line";
-            case CPU_USAGE: return "% CPU";
-            case PID: return "PID";
-            case USER: return "User";
-            case UID: return "UID";
+            case COMMAND_LINE: return _("Command line");
+            case CPU_USAGE: return _("% CPU");
+            case PID: return _("PID");
+            case USER: return _("User");
+            case UID: return _("UID");
             default: assert_not_reached();
         }
     }

@@ -8,15 +8,15 @@ namespace Satellite {
 
     private string format_bytes (uint64 size) {
         if (size < 9e2)
-            return (uint64.FORMAT + " B").printf (size);
+            return _(uint64.FORMAT + " B").printf (size);
         else if (size < 9e5)
-            return "%.1f KB".printf (size / 1e3);
+            return _("%.1f KB").printf (size / 1e3);
         else if (size < 9e8)
-            return "%.1f MB".printf (size / 1e6);
+            return _("%.1f MB").printf (size / 1e6);
         else if (size < 9e11)
-            return "%.1f GB".printf (size / 1e9);
+            return _("%.1f GB").printf (size / 1e9);
         else
-            return "%.1f TB".printf (size / 1e12);
+            return _("%.1f TB").printf (size / 1e12);
     }
 
     public void render_bytes (Gtk.CellLayout layout, Gtk.CellRendererText renderer, Gtk.TreeModel model, Gtk.TreeIter iter, int column) {
