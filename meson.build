@@ -1,23 +1,14 @@
-project('com.github.ryanafrish7.satellite', 'vala', 'c')
+project('com.github.ryanafrish7.satellite', 'vala', 'c', version: '0.1.0')
+
+i18n = import('i18n')
+
+add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), language:'c')
+
+subdir('src')
 
 executable(
     meson.project_name(),
-    'src/Application.vala',
-    'src/MainWindow.vala',
-    'src/Orchestrator.vala',
-    'src/shared/TreeViewUtils.vala',
-    'src/models/ProcessInfo.vala',
-    'src/models/ProcessCPUUsage.vala',
-    'src/models/ProcessMemoryUsage.vala',
-    'src/models/SystemMemoryUsage.vala',
-    'src/views/CPUView.vala',
-    'src/views/MemoryView.vala',
-    'src/providers/ProcessInfoProvider.vala',
-    'src/providers/ProcessCPUUsageProvider.vala',
-    'src/providers/MemoryUsageProvider.vala',
-    'src/stores/AbstractModel.vala',
-    'src/stores/CPUViewModel.vala',
-    'src/stores/MemoryViewModel.vala',
+    sources,
     dependencies: [
         dependency('gee-0.8'),
         dependency('granite', version: '>=5.2.3'),
@@ -32,13 +23,6 @@ executable(
 )
 
 subdir('data')
+subdir('po')
 
-install_data(
-    join_paths('data', meson.project_name() + '.desktop'),
-    install_dir: join_paths(get_option('datadir'), 'applications')
-)
-
-install_data(
-    join_paths('data', meson.project_name() + '.appdata.xml'),
-    install_dir: join_paths(get_option('datadir'), 'metainfo')
-)
+meson.add_install_script('meson/post_install.py')

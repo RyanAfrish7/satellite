@@ -79,12 +79,12 @@ public class Satellite.MemoryView : Gtk.TreeView {
 
     public string get_column_name (MemoryViewModel.Column column) {
         switch (column) {
-            case COMMAND_LINE: return "Command line";
-            case MEMORY_USAGE: return "Memory used";
-            case MEMORY_USAGE_IN_PERCENTAGE: return "% Memory";
-            case PID: return "PID";
-            case USER: return "User";
-            case UID: return "UID";
+            case COMMAND_LINE: return _("Command line");
+            case MEMORY_USAGE: return _("Memory used");
+            case MEMORY_USAGE_IN_PERCENTAGE: return _("% Memory");
+            case PID: return _("PID");
+            case USER: return _("User");
+            case UID: return _("UID");
             default: assert_not_reached();
         }
     }

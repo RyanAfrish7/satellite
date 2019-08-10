@@ -1,0 +1,57 @@
+# French translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# NathanBnm, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-08 11:18+0200\n"
+"PO-Revision-Date: 2019-08-08 11:12+0200\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:3
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:6
+msgid "Satellite"
+msgstr "Satellite"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:4
+msgid "System monitor"
+msgstr "Gestionnaire système"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:5
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:7
+msgid "Monitor how the system resources are being utilized"
+msgstr "Gérez la façon dont sont utilisées les ressources du système"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:8
+msgid "com.github.ryanafrish7.satellite"
+msgstr "com.github.ryanafrish7.satellite"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:11
+msgid "System;Process;Monitor;"
+msgstr "Système;Processus;Gestionnaire;"
+
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:9
+msgid ""
+"Satellite is a system monitor which will allow you to monitor your system "
+"resources like cpu usage and memory."
+msgstr ""
+"Satellite est un gestionnaire système qui vous permet de gérer vos "
+"ressources du système telles que l'utilisation du processeur et de la "
+"mémoire."
+
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:18
+msgid "Initial release"
+msgstr "Version initiale"
+
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:56
+msgid "Afrish Khan S"
+msgstr "Afrish Khan S"
