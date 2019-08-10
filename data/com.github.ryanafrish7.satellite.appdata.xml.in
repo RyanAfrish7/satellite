@@ -3,6 +3,7 @@
 <component type="desktop">
   <id>com.github.ryanafrish7.satellite</id>
   <metadata_license>CC0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
   <name>Satellite</name>
   <summary>Monitor how the system resources are being utilized</summary>
   <description>
