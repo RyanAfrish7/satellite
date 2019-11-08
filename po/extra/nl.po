@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-08 11:18+0200\n"
+"PO-Revision-Date: 2019-11-08 13:44+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:3
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:6
+msgid "Satellite"
+msgstr "Satteliet"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:4
+msgid "System monitor"
+msgstr "Systeemmonitor"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:5
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:7
+msgid "Monitor how the system resources are being utilized"
+msgstr "Houdt bij hoe systeembronnen worden benut"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:8
+msgid "com.github.ryanafrish7.satellite"
+msgstr "com.github.ryanafrish7.satellite"
+
+#: data/com.github.ryanafrish7.satellite.desktop.in:11
+msgid "System;Process;Monitor;"
+msgstr "Systeem;Proces;Monitor;"
+
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:9
+msgid ""
+"Satellite is a system monitor which will allow you to monitor your system "
+"resources like cpu usage and memory."
+msgstr ""
+"Satteliet is een systeemmonitor waarmee je in de gaten kunt houden hoe "
+"systeembronnen, zoals CPU- en geheugengebruik, worden gebruikt."
+
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:18
+msgid "Initial release"
+msgstr "Initiële uitgave"
+
+#: data/com.github.ryanafrish7.satellite.appdata.xml.in:56
+msgid "Afrish Khan S"
+msgstr "Afrish Khan S"
